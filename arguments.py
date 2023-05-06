@@ -25,7 +25,7 @@ def concatinate_args(*strs ):
     answer = ""
     for string in strs:
        answer+= string
-    return answer
+    return (f"{answer}")
     
 
     
