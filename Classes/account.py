@@ -19,3 +19,11 @@ class Account:
     def calculate_interest(self, time):
         interest = (self.balance * self.intrest_rate * time) / 100
         return f"Interest for {time} years: {interest}"
+    
+
+    # def print_statement(self):
+# Add a new method  print_statement which combines both deposits and 
+# withdrawals into one list and, using a for loop, prints each transaction in a new 
+# line like this
+# deposit - 1000
+# withdrawal - 500

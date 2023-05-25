@@ -33,6 +33,20 @@ if checkPrime(num)==True:
 else:
   print("Not Prime")
 
+  def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True
+
+n = int(input("Enter a number: "))
+if is_prime(n):
+    print("Prime")
+else:
+    print("Not prime")
+
 
 # #qn3Write a function that takes a list of integers as input and prints the 
 # # sum of all the even numbers in the list.
@@ -61,31 +75,31 @@ number = 6
 if number>5:
    print(number*number)
 
-# # password = input("Enter password") 
-# # if password =="PYnative@#29":
-# #    print("Correct password") 
-# # else:
-# #    print("Incorrect Password")   
+# password = input("Enter password") 
+# if password =="PYnative@#29":
+#    print("Correct password") 
+# else:
+#    print("Incorrect Password")   
 
-# # # def user_check(choice):
-# # #    if choice == 1:
-# # #       print('Admin')
-# # #     elif choice == 2:
-# # #       print('Editor')
-# # #     elif choice ==3:
-# # #       print('Guest')
-# # #     else:
-# # #       print('Wrong entry') 
+# # def user_check(choice):
+# #    if choice == 1:
+# #       print('Admin')
+#     elif choice == 2:
+#       print('Editor')
+#     elif choice ==3:
+#       print('Guest')
+#     else:
+#       print('Wrong entry') 
 
-# # # num1 = 56
-# # # num2 = 16
-# # #  if num1>=num2:
-# # #    print(num1,'and',num2,'are equal')
-# # #    else:
-# # #    print(num1,'is greater than',num2)
-# # # else:
-# # #    print(num1,'is smaller than',num2)
-# #   # identation  
+# num1 = 56
+# num2 = 16
+#  if num1>=num2:
+#    print(num1,'and',num2,'are equal')
+#    else:
+#    print(num1,'is greater than',num2)
+# else:
+#    print(num1,'is smaller than',num2)
+  # identation  
     
 # x = 1
 # while x <= 5: print(x,end=''): x = x+1
@@ -98,3 +112,43 @@ for i in range(rows):
       print(i,end='')
 print('')
 
+class Product:
+    def __init__(self, name, price, description):
+        self.name = name
+        self.price = price
+        self.description = description
+
+    def Order(self, items):
+        total = 0
+        for item in items:
+            total += item['product'].price * item['quantity']
+        print(f"Order Total: ${total}")
+
+items = [{'product': Product('Product1', 10, 'Description1'), 'quantity': 2},
+         {'product': Product('Product2', 20, 'Description2'), 'quantity': 3}]
+
+product = Product('Product3', 30, 'Description3')
+product.Order(items)
+
+class Product:
+    def __init__(self,name,price,description,category):
+        self.name=name
+        self.price=price
+        self.description =description
+        self.category = category
+
+    def order(self,items):
+        self.items = items
+        self.total_price = sum([item['product'].price * item['quantity'] for item in items])
+        print(f"Order")
+        
+    def set_category(self, category):
+        self.category = category
+
+
+items = [{'product': Product('Product1', 10, 'Description1'), 'quantity': 2},
+         {'product': Product('Product2', 20, 'Description2'), 'quantity': 3}]
+
+product = Product('Product3', 30, 'Description3')
+product.set_category('Category3')
+product.order(items)
